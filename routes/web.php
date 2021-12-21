@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\OrderShipmentStatusUpdated;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/broadcast', function () {
+    OrderShipmentStatusUpdated::broadcast();
+    return \Carbon\Carbon::now()->toIso8601String();
 });
