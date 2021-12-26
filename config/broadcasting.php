@@ -30,6 +30,21 @@ return [
 
     'connections' => [
 
+//        'pusher' => [
+//            'driver' => 'pusher',
+//            'key' => env('PUSHER_APP_KEY'),
+//            'secret' => env('PUSHER_APP_SECRET'),
+//            'app_id' => env('PUSHER_APP_ID'),
+//            'options' => [
+//                'cluster' => env('PUSHER_APP_CLUSTER'),
+//                //'useTLS' => true,
+//                'encrypted' => false,
+//                'host' => '137.184.18.17',
+//                'port' => 6001,
+//                'scheme' => 'http'
+//            ],
+//        ],
+
         'pusher' => [
             'driver' => 'pusher',
             'key' => env('PUSHER_APP_KEY'),
@@ -37,11 +52,10 @@ return [
             'app_id' => env('PUSHER_APP_ID'),
             'options' => [
                 'cluster' => env('PUSHER_APP_CLUSTER'),
-                //'useTLS' => true,
                 'encrypted' => true,
-                'host' => 'websockets-server.test',
-                'port' => 6001,
-                'scheme' => 'http'
+                'host' => 'socket.detechtiva.com',
+                'port' => 443,
+                'scheme' => 'https',
             ],
         ],
 

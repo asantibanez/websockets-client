@@ -2091,17 +2091,26 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 window.Pusher = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
 window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
-  broadcaster: 'pusher',
-  key: "c45a32b9cf7666e587af",
-  cluster: "mt1",
+  // broadcaster: 'pusher',
+  // key: process.env.MIX_PUSHER_APP_KEY,
+  // cluster: process.env.MIX_PUSHER_APP_CLUSTER,
   // Pusher
   //forceTLS: true,
-  wsHost: 'websockets-server.test',
-  wsPort: 6001,
-  wssPort: 6001,
-  forceTLS: false,
-  disableStats: true,
-  encrypted: false,
+  // wsHost: '137.184.18.17',
+  // wsPort: 6001,
+  // wssPort: 6001,
+  // forceTLS: false,
+  // disableStats: true,
+  // encrypted: false,
+  // enabledTransports: ['ws', 'wss'],
+  broadcaster: 'pusher',
+  key: 'c45a32b9cf7666e587af',
+  wsHost: 'socket.detechtiva.com',
+  wsPort: 443,
+  wssPort: 443,
+  forceTLS: true,
+  //disableStats: process.env.MIX_PUSHER_APP_DISABLE_STATS === 'true',
+  encrypted: true,
   enabledTransports: ['ws', 'wss']
 });
 console.log('Registering Echo');
